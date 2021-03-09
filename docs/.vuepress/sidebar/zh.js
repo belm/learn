@@ -53,6 +53,7 @@ module.exports = [
       '/pm2',
       '/supervisor',
       '/github_pages',
+      ['https://vuepress.vuejs.org/zh/guide/getting-started.html', 'VuePress'],
     ]
   },
 
