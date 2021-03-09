@@ -1,0 +1,19 @@
+name: Docs Build and Upload
+
+on: 
+  push:
+    paths: docs/**
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@master
+        
+    - name: npm install vuepress
+      run: |
+       sudo npm install -g vuepress
+        
+    - name: vuepress build
+      run: |
+        /bin/bash ./deploy.sh
