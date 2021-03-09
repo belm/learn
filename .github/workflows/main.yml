@@ -18,5 +18,8 @@ jobs:
       run: |
         cd docs
         sudo vuepress build
-        cd ..
-        /bin/bash ./deploy.sh
+        cd dist
+        git init
+        git add -A
+        git commit -m 'deploy'
+        git push -f git@github.com:belm/learn.git master:gh-pages
