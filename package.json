@@ -1,0 +1,28 @@
+{
+  "name": "com.belmeng.learn",
+  "version": "1.0.0",
+  "description": "learn forever",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "docs:dev": "vuepress dev docs",
+    "docs:build": "vuepress build docs"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/belm/learn.git"
+  },
+  "keywords": [
+    "learn",
+    "forever"
+  ],
+  "author": "belm",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/belm/learn/issues"
+  },
+  "homepage": "https://github.com/belm/learn#readme",
+  "devDependencies": {
+    "vuepress": "^1.8.2"
+  }
+}
