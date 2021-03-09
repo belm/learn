@@ -3,8 +3,9 @@
 
 ## 简介
 
-**注意**：Dockerfile 的指令每执行一次都会在 docker 上新建一层。所以过多无意义的层，会造成镜像膨胀过大。例如：
+注意：Dockerfile 的指令每执行一次都会在 docker 上新建一层。所以过多无意义的层，会造成镜像膨胀过大。例如：
 
+    
 ```
 FROM centos
 RUN yum install wget

@@ -1,4 +1,4 @@
-name: Docs Build and Upload
+name: Deploy Github Pages
 
 on: 
   push:
@@ -8,18 +8,24 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@master
-        
-    - name: npm install vuepress
-      run: |
-       sudo npm install -g vuepress
-        
-    - name: vuepress build
-      run: |
-        cd docs
-        sudo vuepress build
-        cd dist
-        git init
-        git add -A
-        git commit -m 'deploy'
-        git push -f git@github.com:belm/learn.git master:gh-pages
+      # 拉取代码
+      - uses: actions/checkout@master
+          
+      #安装依赖环境
+      - name: npm install vuepress
+        run: |
+         sudo npm install -g vuepress
+      
+      #生成静态文件 /docs/dist
+      - name: vuepress build
+        run: |
+          cd docs
+          sudo vuepress build
+
+      # 部署到 GitHub Pages
+      - name: deploy
+        uses: JamesIves/github-pages-deploy-action@releases/v3
+        with:
+          ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }}
+          BRANCH: gh-pages
+          FOLDER: docs/dist
