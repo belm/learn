@@ -16,4 +16,6 @@ jobs:
         
     - name: vuepress build
       run: |
-        /bin/bash ./deploy.sh
+        cd docs
+        sudo vuepress build
+        /bin/bash /deploy.sh
