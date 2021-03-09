@@ -52,6 +52,7 @@ module.exports = [
     children: [
       '/pm2',
       '/supervisor',
+      '/github_pages',
     ]
   },
 
