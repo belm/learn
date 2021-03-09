@@ -1,4 +1,4 @@
-# GitHub Pages & GitHub Actions
+# GitHub Pages & Actions
 
 ```
 从零实现GitHub Pages
