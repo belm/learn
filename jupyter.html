@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>jupyter | 学习笔记</title>
+    <meta name="generator" content="VuePress 1.8.2">
+    <link rel="icon" href="/learn/favcon.ico">
+    <meta name="description" content="学习笔记 Learn Forever">
+    
+    <link rel="preload" href="/learn/assets/css/0.styles.9098fa27.css" as="style"><link rel="preload" href="/learn/assets/js/app.5f5cd4dc.js" as="script"><link rel="preload" href="/learn/assets/js/2.a2df9b78.js" as="script"><link rel="preload" href="/learn/assets/js/17.739688d6.js" as="script"><link rel="prefetch" href="/learn/assets/js/10.d96ecac4.js"><link rel="prefetch" href="/learn/assets/js/11.beb0014a.js"><link rel="prefetch" href="/learn/assets/js/12.3b3287ca.js"><link rel="prefetch" href="/learn/assets/js/13.670df0d0.js"><link rel="prefetch" href="/learn/assets/js/14.a919307d.js"><link rel="prefetch" href="/learn/assets/js/15.11275468.js"><link rel="prefetch" href="/learn/assets/js/16.eeb22ce6.js"><link rel="prefetch" href="/learn/assets/js/18.5e0d2987.js"><link rel="prefetch" href="/learn/assets/js/19.7d9ffdea.js"><link rel="prefetch" href="/learn/assets/js/20.a04d24f3.js"><link rel="prefetch" href="/learn/assets/js/21.f35716a7.js"><link rel="prefetch" href="/learn/assets/js/22.5b8bba6a.js"><link rel="prefetch" href="/learn/assets/js/23.681d80b7.js"><link rel="prefetch" href="/learn/assets/js/24.4bf1125c.js"><link rel="prefetch" href="/learn/assets/js/25.bc00131b.js"><link rel="prefetch" href="/learn/assets/js/3.3a852c24.js"><link rel="prefetch" href="/learn/assets/js/4.e05c873c.js"><link rel="prefetch" href="/learn/assets/js/5.f3e6ed41.js"><link rel="prefetch" href="/learn/assets/js/6.498ab014.js"><link rel="prefetch" href="/learn/assets/js/7.dddb4173.js"><link rel="prefetch" href="/learn/assets/js/8.13763756.js"><link rel="prefetch" href="/learn/assets/js/9.a5861cd0.js">
+    <link rel="stylesheet" href="/learn/assets/css/0.styles.9098fa27.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/learn/" class="home-link router-link-active"><!----> <span class="site-name">学习笔记</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="https://www.belmeng.com" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  首页
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></div><div class="nav-item"><a href="https://www.belmeng.com" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  文档
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></div> <a href="https://github.com/belm/learn" target="_blank" rel="noopener noreferrer" class="repo-link">
+    GitHub
+    <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="https://www.belmeng.com" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  首页
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></div><div class="nav-item"><a href="https://www.belmeng.com" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  文档
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></div> <a href="https://github.com/belm/learn" target="_blank" rel="noopener noreferrer" class="repo-link">
+    GitHub
+    <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></nav>  <ul class="sidebar-links"><li><section class="sidebar-group depth-0"><p class="sidebar-heading open"><span>后端</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/learn/" aria-current="page" class="sidebar-link">Learn Forever</a></li><li><a href="/learn/go.html" class="sidebar-link">go</a></li><li><a href="/learn/jupyter.html" aria-current="page" class="active sidebar-link">jupyter</a></li><li><a href="/learn/mysql.html" class="sidebar-link">MYSQL</a></li><li><a href="/learn/php.html" class="sidebar-link">PHP</a></li><li><a href="/learn/python.html" class="sidebar-link">python</a></li></ul></section></li><li><section class="sidebar-group depth-0"><p class="sidebar-heading"><span>运维</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/learn/centos.html" class="sidebar-link">centos</a></li><li><a href="/learn/docker.html" class="sidebar-link">docker</a></li><li><a href="/learn/k8s.html" class="sidebar-link">K8s</a></li><li><a href="/learn/linux.html" class="sidebar-link">linux</a></li><li><a href="/learn/dockerfile.html" class="sidebar-link">dockerfile</a></li><li><a href="/learn/frp.html" class="sidebar-link">frp</a></li><li><a href="/learn/iptables.html" class="sidebar-link">Iptables</a></li><li><a href="/learn/jenkins.html" class="sidebar-link">jenkins</a></li><li><a href="https://pm2.keymetrics.io/" target="_blank" rel="noopener noreferrer" class="sidebar-link">pm2官网<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li></ul></section></li><li><section class="sidebar-group depth-0"><p class="sidebar-heading"><span>大数据</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/learn/elk.html" class="sidebar-link">ELK</a></li></ul></section></li><li><section class="sidebar-group depth-0"><p class="sidebar-heading"><span>前端</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/learn/flutter.html" class="sidebar-link">flutter</a></li><li><a href="/learn/nodejs.html" class="sidebar-link">nodejs</a></li></ul></section></li><li><section class="sidebar-group depth-0"><p class="sidebar-heading"><span>其他</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/learn/pm2.html" class="sidebar-link">pm2</a></li><li><a href="/learn/supervisor.html" class="sidebar-link">supervisor</a></li></ul></section></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><h1 id="jupyter"><a href="#jupyter" class="header-anchor">#</a> jupyter</h1> <p>安装启动jupyter notebook</p> <div class="language- extra-class"><pre class="language-text"><code>#安装
+pip3 install jupyter notebook
+#启动
+jupyter notebook
+</code></pre></div><p>docker安装 anaconda3</p> <div class="language- extra-class"><pre class="language-text"><code>docker pull continuumio/anaconda3
+
+docker run -it --name=&quot;anaconda&quot; -p 8888:8888 continuumio/anaconda3 /bin/bash
+conda install -c conda-forge jupyterlab
+
+nohup jupyter lab --ip='*' --port=8888 --no-browser --allow-root &gt;/dev/null  2&gt;&amp;1 &amp;
+
+or
+
+docker run -i -t -p 8888:8888 continuumio/anaconda3 /bin/bash -c &quot;/opt/conda/bin/conda install jupyter -y --quiet &amp;&amp; mkdir /opt/notebooks &amp;&amp; /opt/conda/bin/jupyter notebook --notebook-dir=/opt/notebooks --ip='*' --port=8888 --no-browser&quot;
+
+</code></pre></div><p>docker安装jupyter/datascience-notebook</p> <div class="language- extra-class"><pre class="language-text"><code>#拉取镜像
+docker pull jupyter/datascience-notebook
+#运行容器
+docker run -d -p 8888:8888 -v /data/jupyter:/home/jovyan/work --name jupyter  jupyter/datascience-notebook
+#进入容器 普通用户权限
+docker exec -it jupyter /bin/bash
+#进入容器 root用户权限
+docker exec -u 0 -it jupyter /bin/bash  
+#查看正在运行的notebook
+jupyter notebook list
+
+
+#保存修改后的容器jupyter为新的镜像jupyter2
+docker commit jupyter jupyter2
+docker run -d -p 8888:8888 -v /data/jupyter:/home/jovyan/work --name jupyter  jupyter2
+docker exec -it jupyter /bin/bash
+docker exec -u 0 -it jupyter /bin/bash
+</code></pre></div><p>Jupyter Notebook(Anaconda) 自动补全代码提示</p> <div class="language- extra-class"><pre class="language-text"><code>pip3 install jupyter_contrib_nbextensions
+jupyter contrib nbextension install --user
+pip3 install --user jupyter_nbextensions_configurator
+jupyter contrib nbextension install --user --skip-running-check
+</code></pre></div><p>Jupyter Notebook 重启</p> <div class="language- extra-class"><pre class="language-text"><code>jupyter notebook
+</code></pre></div><p>python插件</p> <div class="language- extra-class"><pre class="language-text"><code>//定时任务插件
+pip3 install apscheduler
+
+//安装pandas
+pip3 install pandas   
+
+//安装企业微信webhook
+pip3 install --upgrade wechat_work_webhook
+
+//安装企业微信发送pandas dataframe插件
+yum install python-devel
+pip3 install dataframe_image
+</code></pre></div></div> <footer class="page-edit"><div class="edit-link"><a href="https://github.com/belm/learn/edit/master/docs/jupyter.md" target="_blank" rel="noopener noreferrer">在Github上编辑</a> <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></div> <div class="last-updated"><span class="prefix">Last Updated:</span> <span class="time">2021-3-9 13:01:26</span></div></footer> <div class="page-nav"><p class="inner"><span class="prev">
+      ←
+      <a href="/learn/go.html" class="prev">
+        go
+      </a></span> <span class="next"><a href="/learn/mysql.html">
+        MYSQL
+      </a>
+      →
+    </span></p></div> </main></div><div class="global-ui"></div></div>
+    <script src="/learn/assets/js/app.5f5cd4dc.js" defer></script><script src="/learn/assets/js/2.a2df9b78.js" defer></script><script src="/learn/assets/js/17.739688d6.js" defer></script>
+  </body>
+</html>

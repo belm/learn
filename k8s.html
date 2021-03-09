@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>K8s | 学习笔记</title>
+    <meta name="generator" content="VuePress 1.8.2">
+    <link rel="icon" href="/learn/favcon.ico">
+    <meta name="description" content="学习笔记 Learn Forever">
+    
+    <link rel="preload" href="/learn/assets/css/0.styles.9098fa27.css" as="style"><link rel="preload" href="/learn/assets/js/app.5f5cd4dc.js" as="script"><link rel="preload" href="/learn/assets/js/2.a2df9b78.js" as="script"><link rel="preload" href="/learn/assets/js/18.5e0d2987.js" as="script"><link rel="prefetch" href="/learn/assets/js/10.d96ecac4.js"><link rel="prefetch" href="/learn/assets/js/11.beb0014a.js"><link rel="prefetch" href="/learn/assets/js/12.3b3287ca.js"><link rel="prefetch" href="/learn/assets/js/13.670df0d0.js"><link rel="prefetch" href="/learn/assets/js/14.a919307d.js"><link rel="prefetch" href="/learn/assets/js/15.11275468.js"><link rel="prefetch" href="/learn/assets/js/16.eeb22ce6.js"><link rel="prefetch" href="/learn/assets/js/17.739688d6.js"><link rel="prefetch" href="/learn/assets/js/19.7d9ffdea.js"><link rel="prefetch" href="/learn/assets/js/20.a04d24f3.js"><link rel="prefetch" href="/learn/assets/js/21.f35716a7.js"><link rel="prefetch" href="/learn/assets/js/22.5b8bba6a.js"><link rel="prefetch" href="/learn/assets/js/23.681d80b7.js"><link rel="prefetch" href="/learn/assets/js/24.4bf1125c.js"><link rel="prefetch" href="/learn/assets/js/25.bc00131b.js"><link rel="prefetch" href="/learn/assets/js/3.3a852c24.js"><link rel="prefetch" href="/learn/assets/js/4.e05c873c.js"><link rel="prefetch" href="/learn/assets/js/5.f3e6ed41.js"><link rel="prefetch" href="/learn/assets/js/6.498ab014.js"><link rel="prefetch" href="/learn/assets/js/7.dddb4173.js"><link rel="prefetch" href="/learn/assets/js/8.13763756.js"><link rel="prefetch" href="/learn/assets/js/9.a5861cd0.js">
+    <link rel="stylesheet" href="/learn/assets/css/0.styles.9098fa27.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/learn/" class="home-link router-link-active"><!----> <span class="site-name">学习笔记</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="https://www.belmeng.com" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  首页
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></div><div class="nav-item"><a href="https://www.belmeng.com" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  文档
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></div> <a href="https://github.com/belm/learn" target="_blank" rel="noopener noreferrer" class="repo-link">
+    GitHub
+    <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="https://www.belmeng.com" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  首页
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></div><div class="nav-item"><a href="https://www.belmeng.com" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  文档
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></div> <a href="https://github.com/belm/learn" target="_blank" rel="noopener noreferrer" class="repo-link">
+    GitHub
+    <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></nav>  <ul class="sidebar-links"><li><section class="sidebar-group depth-0"><p class="sidebar-heading"><span>后端</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/learn/" aria-current="page" class="sidebar-link">Learn Forever</a></li><li><a href="/learn/go.html" class="sidebar-link">go</a></li><li><a href="/learn/jupyter.html" class="sidebar-link">jupyter</a></li><li><a href="/learn/mysql.html" class="sidebar-link">MYSQL</a></li><li><a href="/learn/php.html" class="sidebar-link">PHP</a></li><li><a href="/learn/python.html" class="sidebar-link">python</a></li></ul></section></li><li><section class="sidebar-group depth-0"><p class="sidebar-heading open"><span>运维</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/learn/centos.html" class="sidebar-link">centos</a></li><li><a href="/learn/docker.html" class="sidebar-link">docker</a></li><li><a href="/learn/k8s.html" aria-current="page" class="active sidebar-link">K8s</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/learn/k8s.html#pod声明" class="sidebar-link">pod声明</a></li></ul></li><li><a href="/learn/linux.html" class="sidebar-link">linux</a></li><li><a href="/learn/dockerfile.html" class="sidebar-link">dockerfile</a></li><li><a href="/learn/frp.html" class="sidebar-link">frp</a></li><li><a href="/learn/iptables.html" class="sidebar-link">Iptables</a></li><li><a href="/learn/jenkins.html" class="sidebar-link">jenkins</a></li><li><a href="https://pm2.keymetrics.io/" target="_blank" rel="noopener noreferrer" class="sidebar-link">pm2官网<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li></ul></section></li><li><section class="sidebar-group depth-0"><p class="sidebar-heading"><span>大数据</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/learn/elk.html" class="sidebar-link">ELK</a></li></ul></section></li><li><section class="sidebar-group depth-0"><p class="sidebar-heading"><span>前端</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/learn/flutter.html" class="sidebar-link">flutter</a></li><li><a href="/learn/nodejs.html" class="sidebar-link">nodejs</a></li></ul></section></li><li><section class="sidebar-group depth-0"><p class="sidebar-heading"><span>其他</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/learn/pm2.html" class="sidebar-link">pm2</a></li><li><a href="/learn/supervisor.html" class="sidebar-link">supervisor</a></li></ul></section></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><h1 id="k8s"><a href="#k8s" class="header-anchor">#</a> K8s</h1> <h2 id="pod声明"><a href="#pod声明" class="header-anchor">#</a> pod声明</h2> <ul><li><p>元数据(metadata): namespace(命名空间)，name（对象名），uid（对象ID）, 标签（lables），注释（annotations）</p></li> <li><p>规范（spec） 描述了该对象的详细配置信息，即用户希望的状态</p></li> <li><p>状态（status）  包含了该对象的一些状态信息，会由各个控制器定期进行更新</p></li></ul> <p>环境搭建：</p> <p>https://www.katacoda.com/courses/kubernetes/playground</p> <p>namespace</p> <div class="language- extra-class"><pre class="language-text"><code> 一组资源和对象的抽象集合，内置的namespace: default, kube-system, kube-public, kube-node-lease
+</code></pre></div><div class="language- extra-class"><pre class="language-text"><code>apiVersion: v1 #指定当前描述文件遵循v1版本的Kubernetes API
+kind: Pod #我们在描述一个pod
+metadata:
+  name: twocontainers #指定pod的名称
+  namespace: default #指定当前描述的pod所在的命名空间
+  labels: #指定pod标签
+    app: twocontainers
+  annotations: #指定pod注释
+    version: v0.5.0
+    releasedBy: david
+    purpose: demo
+spec:
+  containers:
+  - name: sise #容器的名称
+    image: quay.io/openshiftlabs/simpleservice:0.5.0 #创建容器所使用的镜像
+    ports:
+    - containerPort: 9876 #应用监听的端口
+  - name: shell #容器的名称
+    image: centos:7 #创建容器所使用的镜像
+    command: #容器启动命令
+      - &quot;bin/bash&quot;
+      - &quot;-c&quot;
+      - &quot;sleep 10000&quot;
+</code></pre></div><h3 id="创建pod"><a href="#创建pod" class="header-anchor">#</a> 创建pod</h3> <div class="language- extra-class"><pre class="language-text"><code>kubectl create -f ./twocontainers.yaml
+kubectl get pods
+kubectl get pod twocontainers -o=jsonpath='{.status.phase}'
+kubectl exec twocontainers -c shell -it -- bash
+进入容器后执行
+curl -s localhost:9876/info
+
+kubectl describe pod twocontainers
+</code></pre></div><h3 id="pod-的重启策略-spec-restartpolicy"><a href="#pod-的重启策略-spec-restartpolicy" class="header-anchor">#</a> Pod 的重启策略  spec.restartPolicy</h3> <div class="language- extra-class"><pre class="language-text"><code>Always   表示一直重启，这也是默认的重启策略
+OnFailure  表示只有在容器异常退出，即退出码不为 0 时，才会对其进行重启操作
+Never  表示从不重启；
+</code></pre></div><h3 id="pod-中的健康检查-针对容器-spec-containers-xxx"><a href="#pod-中的健康检查-针对容器-spec-containers-xxx" class="header-anchor">#</a> Pod 中的健康检查(针对容器) spec.containers.xxx</h3> <ul><li>livenessProbe 可以用来探测容器是否真的在“运行”，即“探活”(探活检测)</li> <li>readinessProbe  常常用于指示容器是否可以对外提供正常的服务请求，即“就绪”(就绪监测)</li> <li>startupProbe  则可以用于判断容器是否已经启动好</li></ul> <p>Probe 内置了如下三个 Handler：</p> <ul><li><a href="https://kubernetes.io/docs/resources-reference/v1.7/#execaction-v1-core" target="_blank" rel="noopener noreferrer">ExecAction<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a> 可以在容器内执行 shell 脚本；</li> <li><a href="https://kubernetes.io/docs/resources-reference/v1.7/#httpgetaction-v1-core" target="_blank" rel="noopener noreferrer">HTTPGetAction<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a> 方便对指定的端口和 IP 地址执行 HTTP Get 请求；</li> <li><a href="https://kubernetes.io/docs/resources-reference/v1.7/#tcpsocketaction-v1-core" target="_blank" rel="noopener noreferrer">TCPSocketAction<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a> 可以对指定端口进行 TCP 检查；</li></ul> <p>在这里 Probe 还提供了其他配置字段，比如 failureThreshold （失败阈值）等，你可以到<a href="https://kubernetes.io/zh/docs/tasks/configure-pod-container/configure-liveness-readiness-startup-probes/#configure-probes" target="_blank" rel="noopener noreferrer">这个官方文档<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a>中查看更详细的解释。</p> <div class="language- extra-class"><pre class="language-text"><code>对于每一种 Probe，Kubelet 只会执行其中一种 Handler。如果你定义了多个 Handler，则会按照 Exec、HTTPGet、TCPSocket 的优先级顺序，选择第一个定义的 Handler。
+</code></pre></div><div class="language- extra-class"><pre class="language-text"><code>apiVersion: v1
+kind: Pod
+metadata:
+  name: probe-demo
+  namespace: demo
+spec:
+  containers:
+  - name: sise
+    image: quay.io/openshiftlabs/simpleservice:0.5.0
+    ports:
+    - containerPort: 9876
+    readinessProbe:
+      tcpSocket:
+        port: 9876
+      periodSeconds: 10
+    livenessProbe:
+      periodSeconds: 5
+      httpGet:
+        path: /health
+        port: 9876
+    startupProbe:
+      httpGet:
+        path: /health
+        port: 9876
+      failureThreshold: 3
+      periodSeconds: 2
+</code></pre></div><h3 id="容器生命周期内的-hook"><a href="#容器生命周期内的-hook" class="header-anchor">#</a> 容器生命周期内的 hook</h3> <ul><li>PostStart 可以在容器启动之后就执行</li> <li>PreStop 则在容器被终止之前被执行，是一种阻塞式的方式。执行完成后，Kubelet 才真正开始销毁容器。</li></ul> <p>同上面的 Probe 一样，hook 也有类似的 Handler：</p> <ul><li>Exec 用来执行 Shell 命令；</li> <li>HTTPGet 可以执行 HTTP 请求。</li></ul> <div class="language- extra-class"><pre class="language-text"><code>apiVersion: v1
+kind: Pod
+metadata:
+  name: lifecycle-demo
+  namespace: demo
+spec:
+  containers:
+  - name: lifecycle-demo-container
+    image: nginx:1.19
+    lifecycle:
+      postStart:
+        exec:
+          command: [&quot;/bin/sh&quot;, &quot;-c&quot;, &quot;echo Hello from the postStart handler &gt; /usr/share/message&quot;]
+      preStop:
+        exec:
+          command: [&quot;/usr/sbin/nginx&quot;,&quot;-s&quot;,&quot;quit&quot;]
+</code></pre></div><h3 id="init-容器"><a href="#init-容器" class="header-anchor">#</a> init 容器</h3> <p>应用容器专注于业务处理，其他一些无关的初始化任务就可以放到 init 容器中。这种解耦有利于各自升级，也降低相互依赖。</p> <p>一个 Pod 中允许有一个或多个 init 容器。init 容器和其他一般的容器非常像，其与众不同的特点主要有：</p> <ul><li>总是运行到完成，可以理解为一次性的任务，不可以运行常驻型任务，因为会 block 应用容器的启动运行；</li> <li>顺序启动执行，下一个的 init 容器都必须在上一个运行成功后才可以启动；</li> <li>禁止使用 readiness/liveness 探针，可以使用 Pod 定义的<strong>activeDeadlineSeconds</strong>，这其中包含了 Init Container 的启动时间；</li> <li>禁止使用 lifecycle hook。</li></ul> <div class="language- extra-class"><pre class="language-text"><code>apiVersion: v1
+kind: Pod
+metadata:
+  name: myapp-pod
+  namespace: demo
+  labels:
+    app: myapp
+spec:
+  containers:
+  - name: myapp-container
+    image: busybox:1.31
+    command: [‘sh’, ‘-c’, ‘echo The app is running! &amp;&amp; sleep 3600‘]
+  initContainers:
+  - name: init-myservice
+    image: busybox:1.31
+    command: ['sh', '-c', 'until nslookup myservice; do echo waiting for myservice; sleep 2; done;']
+  - name: init-mydb
+    image: busybox:1.31
+    command: ['sh', '-c', 'until nslookup mydb; do echo waiting for mydb; sleep 2; done;']
+</code></pre></div><p>在 myapp-container 启动之前，它会依次启动 init-myservice、init-mydb，分别来检查依赖的服务是否可用。</p></div> <footer class="page-edit"><div class="edit-link"><a href="https://github.com/belm/learn/edit/master/docs/k8s.md" target="_blank" rel="noopener noreferrer">在Github上编辑</a> <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></div> <div class="last-updated"><span class="prefix">Last Updated:</span> <span class="time">2021-3-9 13:01:26</span></div></footer> <div class="page-nav"><p class="inner"><span class="prev">
+      ←
+      <a href="/learn/docker.html" class="prev">
+        docker
+      </a></span> <span class="next"><a href="/learn/linux.html">
+        linux
+      </a>
+      →
+    </span></p></div> </main></div><div class="global-ui"></div></div>
+    <script src="/learn/assets/js/app.5f5cd4dc.js" defer></script><script src="/learn/assets/js/2.a2df9b78.js" defer></script><script src="/learn/assets/js/18.5e0d2987.js" defer></script>
+  </body>
+</html>

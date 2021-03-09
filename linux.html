@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>linux | 学习笔记</title>
+    <meta name="generator" content="VuePress 1.8.2">
+    <link rel="icon" href="/learn/favcon.ico">
+    <meta name="description" content="学习笔记 Learn Forever">
+    
+    <link rel="preload" href="/learn/assets/css/0.styles.9098fa27.css" as="style"><link rel="preload" href="/learn/assets/js/app.5f5cd4dc.js" as="script"><link rel="preload" href="/learn/assets/js/2.a2df9b78.js" as="script"><link rel="preload" href="/learn/assets/js/19.7d9ffdea.js" as="script"><link rel="prefetch" href="/learn/assets/js/10.d96ecac4.js"><link rel="prefetch" href="/learn/assets/js/11.beb0014a.js"><link rel="prefetch" href="/learn/assets/js/12.3b3287ca.js"><link rel="prefetch" href="/learn/assets/js/13.670df0d0.js"><link rel="prefetch" href="/learn/assets/js/14.a919307d.js"><link rel="prefetch" href="/learn/assets/js/15.11275468.js"><link rel="prefetch" href="/learn/assets/js/16.eeb22ce6.js"><link rel="prefetch" href="/learn/assets/js/17.739688d6.js"><link rel="prefetch" href="/learn/assets/js/18.5e0d2987.js"><link rel="prefetch" href="/learn/assets/js/20.a04d24f3.js"><link rel="prefetch" href="/learn/assets/js/21.f35716a7.js"><link rel="prefetch" href="/learn/assets/js/22.5b8bba6a.js"><link rel="prefetch" href="/learn/assets/js/23.681d80b7.js"><link rel="prefetch" href="/learn/assets/js/24.4bf1125c.js"><link rel="prefetch" href="/learn/assets/js/25.bc00131b.js"><link rel="prefetch" href="/learn/assets/js/3.3a852c24.js"><link rel="prefetch" href="/learn/assets/js/4.e05c873c.js"><link rel="prefetch" href="/learn/assets/js/5.f3e6ed41.js"><link rel="prefetch" href="/learn/assets/js/6.498ab014.js"><link rel="prefetch" href="/learn/assets/js/7.dddb4173.js"><link rel="prefetch" href="/learn/assets/js/8.13763756.js"><link rel="prefetch" href="/learn/assets/js/9.a5861cd0.js">
+    <link rel="stylesheet" href="/learn/assets/css/0.styles.9098fa27.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/learn/" class="home-link router-link-active"><!----> <span class="site-name">学习笔记</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="https://www.belmeng.com" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  首页
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></div><div class="nav-item"><a href="https://www.belmeng.com" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  文档
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></div> <a href="https://github.com/belm/learn" target="_blank" rel="noopener noreferrer" class="repo-link">
+    GitHub
+    <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="https://www.belmeng.com" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  首页
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></div><div class="nav-item"><a href="https://www.belmeng.com" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  文档
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></div> <a href="https://github.com/belm/learn" target="_blank" rel="noopener noreferrer" class="repo-link">
+    GitHub
+    <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></nav>  <ul class="sidebar-links"><li><section class="sidebar-group depth-0"><p class="sidebar-heading"><span>后端</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/learn/" aria-current="page" class="sidebar-link">Learn Forever</a></li><li><a href="/learn/go.html" class="sidebar-link">go</a></li><li><a href="/learn/jupyter.html" class="sidebar-link">jupyter</a></li><li><a href="/learn/mysql.html" class="sidebar-link">MYSQL</a></li><li><a href="/learn/php.html" class="sidebar-link">PHP</a></li><li><a href="/learn/python.html" class="sidebar-link">python</a></li></ul></section></li><li><section class="sidebar-group depth-0"><p class="sidebar-heading open"><span>运维</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/learn/centos.html" class="sidebar-link">centos</a></li><li><a href="/learn/docker.html" class="sidebar-link">docker</a></li><li><a href="/learn/k8s.html" class="sidebar-link">K8s</a></li><li><a href="/learn/linux.html" aria-current="page" class="active sidebar-link">linux</a></li><li><a href="/learn/dockerfile.html" class="sidebar-link">dockerfile</a></li><li><a href="/learn/frp.html" class="sidebar-link">frp</a></li><li><a href="/learn/iptables.html" class="sidebar-link">Iptables</a></li><li><a href="/learn/jenkins.html" class="sidebar-link">jenkins</a></li><li><a href="https://pm2.keymetrics.io/" target="_blank" rel="noopener noreferrer" class="sidebar-link">pm2官网<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li></ul></section></li><li><section class="sidebar-group depth-0"><p class="sidebar-heading"><span>大数据</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/learn/elk.html" class="sidebar-link">ELK</a></li></ul></section></li><li><section class="sidebar-group depth-0"><p class="sidebar-heading"><span>前端</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/learn/flutter.html" class="sidebar-link">flutter</a></li><li><a href="/learn/nodejs.html" class="sidebar-link">nodejs</a></li></ul></section></li><li><section class="sidebar-group depth-0"><p class="sidebar-heading"><span>其他</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/learn/pm2.html" class="sidebar-link">pm2</a></li><li><a href="/learn/supervisor.html" class="sidebar-link">supervisor</a></li></ul></section></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><h1 id="linux"><a href="#linux" class="header-anchor">#</a> linux</h1> <p>查看系统</p> <div class="language- extra-class"><pre class="language-text"><code>cat /etc/issue
+uname -a
+cat /proc/version
+</code></pre></div><p>查看端口</p> <div class="language- extra-class"><pre class="language-text"><code>netstat -antpl
+</code></pre></div><p>查看防火墙端口</p> <div class="language- extra-class"><pre class="language-text"><code>firewall-cmd --query-port=8000/tcp
+</code></pre></div><p>查看用户</p> <div class="language- extra-class"><pre class="language-text"><code>cat /etc/passwd
+</code></pre></div><p>查看dns</p> <div class="language- extra-class"><pre class="language-text"><code>cat /etc/resolv.conf
+</code></pre></div><p>校验时间</p> <div class="language- extra-class"><pre class="language-text"><code>yum install ntpdate
+
+crontab add :
+*/30 * * * * /usr/sbin/ntpdate cn.pool.ntp.org &gt; /dev/null
+</code></pre></div><p>批量杀掉进程</p> <div class="language- extra-class"><pre class="language-text"><code>ps -ef | grep bi.admin.heitao.com | grep -v grep | awk '{print $2}' | xargs kill -9
+</code></pre></div><p>查看进程的所有线程</p> <div class="language- extra-class"><pre class="language-text"><code>ps -mp pid -o THREAD,tid   //例如： ps -mp 76379 -o THREAD,tid
+</code></pre></div><p>跟踪线程的系统调用</p> <div class="language- extra-class"><pre class="language-text"><code>strace -p 线程id
+</code></pre></div><p>跟踪进程的系统调用</p> <div class="language- extra-class"><pre class="language-text"><code>strace -fp 进程id
+</code></pre></div><p>lsof命令查看进程文件描述符对应打开的文件</p> <div class="language- extra-class"><pre class="language-text"><code>lsof -p 进程id
+</code></pre></div><p>查看进程的描述符目录</p> <div class="language- extra-class"><pre class="language-text"><code>ls /proc/进程id/fd
+</code></pre></div><p>查看进程状态</p> <div class="language- extra-class"><pre class="language-text"><code>cat /proc/进程id/status
+</code></pre></div><p>查看进程堆栈信息</p> <div class="language- extra-class"><pre class="language-text"><code>cat /proc/进程id/stack
+</code></pre></div><p>查看导致进程睡眠或者等待的函数</p> <div class="language- extra-class"><pre class="language-text"><code>cat /proc/进程id/wchan
+
+poll_schedule_timeout   是在等待 I/O,不可能使用的是非阻塞 I/O.其他很多进程的状态就是这个，这是一个比较正常的状态
+futex_wait_queue_me  表示因为资源的问题产生的锁
+sk_wait_data:wait for some data on a network socket.根据这个可以判断该进程是在等待某一个经过 socket 传输的资源
+</code></pre></div><p>查看dns</p> <div class="language- extra-class"><pre class="language-text"><code>cat /etc/resolv.conf
+
+dig -x 223.5.5.5
+
+nslookup www.heitao.com 223.5.5.5
+</code></pre></div><p>参考</p> <p>http://vearne.cc/archives/297</p> <p>https://blog.csdn.net/peng314899581/article/details/79064616</p> <p>生成rsa私钥和公钥</p> <div class="language- extra-class"><pre class="language-text"><code>//生成私钥
+openssl genrsa -out rsa_private_key.pem 1024
+
+//私钥转成PKCS8格式
+openssl pkcs8 -topk8 -inform PEM -in rsa_private_key.pem -outform PEM -nocrypt -out ./rsa_private_key_pkcs8.pem
+
+//生成公钥
+openssl rsa -in rsa_private_key.pem -out rsa_public_key.pem -pubout
+</code></pre></div><p>生成ssh公私钥</p> <div class="language- extra-class"><pre class="language-text"><code>ssh-keygen -t rsa
+</code></pre></div><p>软连接</p> <div class="language- extra-class"><pre class="language-text"><code>ln -s  /usr/local/app    app  
+</code></pre></div><p>指定目录挂盘</p> <div class="language- extra-class"><pre class="language-text"><code>fdisk -l  #查看系统存在的磁盘
+mount /dev/sdb1 /指定目录 //挂载指定目录
+umount /test  //卸载指定目录
+</code></pre></div><p>修改时区</p> <div class="language- extra-class"><pre class="language-text"><code>//查看当前时区
+ls -l /etc/localtime
+
+执行tzselect 命令选择自己的时区
+
+//删除默认的时区
+sudo rm -f /etc/localtime  
+
+//使用新设置的时区
+sudo ln -s /usr/share/zoneinfo/Asia/Shanghai /etc/localtime
+
+or 
+
+//使用系统命令
+sudo timedatectl set-timezone 'Asia/Shanghai'
+</code></pre></div><p>sed</p> <div class="language- extra-class"><pre class="language-text"><code>
+</code></pre></div><p>awk</p> <div class="language- extra-class"><pre class="language-text"><code>
+</code></pre></div><p>grep</p> <div class="language- extra-class"><pre class="language-text"><code>
+</code></pre></div></div> <footer class="page-edit"><div class="edit-link"><a href="https://github.com/belm/learn/edit/master/docs/linux.md" target="_blank" rel="noopener noreferrer">在Github上编辑</a> <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></div> <div class="last-updated"><span class="prefix">Last Updated:</span> <span class="time">2021-3-9 13:01:26</span></div></footer> <div class="page-nav"><p class="inner"><span class="prev">
+      ←
+      <a href="/learn/k8s.html" class="prev">
+        K8s
+      </a></span> <span class="next"><a href="/learn/dockerfile.html">
+        dockerfile
+      </a>
+      →
+    </span></p></div> </main></div><div class="global-ui"></div></div>
+    <script src="/learn/assets/js/app.5f5cd4dc.js" defer></script><script src="/learn/assets/js/2.a2df9b78.js" defer></script><script src="/learn/assets/js/19.7d9ffdea.js" defer></script>
+  </body>
+</html>
