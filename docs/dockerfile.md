@@ -31,7 +31,7 @@ docker build -t nginx:v3 .
 FROM：定制的镜像都是基于 FROM 的镜像，这里的 nginx 就是定制需要的基础镜像。后续的操作都是基于 nginx。
 ```
 
-### RUN
+## RUN
 
 ```
 RUN：用于执行后面跟着的命令行命令。有以下俩种格式：

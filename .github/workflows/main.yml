@@ -18,4 +18,5 @@ jobs:
       run: |
         cd docs
         sudo vuepress build
-        /bin/bash /deploy.sh
+        cd ..
+        /bin/bash ./deploy.sh
