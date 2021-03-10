@@ -24,6 +24,7 @@ module.exports = [
       '/frp',
       '/iptables',
       '/jenkins',
+      '/cicd',
       ['https://pm2.keymetrics.io/','pm2官网'],
     ]
   },
