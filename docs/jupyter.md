@@ -7,8 +7,11 @@
 ```
 #安装
 pip3 install jupyter notebook
+pip3 install -i https://mirrors.aliyun.com/pypi/simple notebook
 #启动
 jupyter notebook
+nohup jupyter notebook --allow-root --port 8001 --ip='0.0.0.0'  >>jupyter.log 2>&1 &
+
 ```
 
 docker安装 anaconda3
@@ -49,6 +52,26 @@ docker exec -it jupyter /bin/bash
 docker exec -u 0 -it jupyter /bin/bash
 ```
 
+
+```
+docker pull jupyter/base-notebook
+docker run -d -p 8001:8888 -v  /data/jupyter:/home/jovyan --name jupyter jupyter/base-notebook
+docker exec -it jupyter /bin/bash
+jupyter notebook list
+
+pip3 install requests apscheduler selenium
+
+#查看安装的chrome版本
+yum info google-chrome-stable
+
+#查看chromedriver版本
+./chromedriver --version
+```
+
+WebDriverException: Message: Service ./chromedriver unexpectedly exited. Status code was: 127
+```
+
+```
 
 
 Jupyter Notebook(Anaconda) 自动补全代码提示
