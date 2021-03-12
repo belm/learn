@@ -284,7 +284,15 @@ sudo systemctl daemon-reload
 sudo systemctl restart docker
 ```
 
-
+vim /etc/docker/daemon.json
+```
+{
+"registry-mirrors": [
+ "https://mirror.ccs.tencentyun.com"
+]
+}
+```
+sudo systemctl restart docker
 
 mysql
 
